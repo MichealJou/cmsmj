@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+	<mapping path="/admin/*"
+		decorator="/WEB-INF/views/backstage/module/cms/layout/default.jsp" />
+
+	<!-- 不用拦截的请求路径 -->
+	<mapping path="/admin/login.html" exclue="true" />
+	<mapping path="/index.html" exclue="true" />
+	<mapping path="/**" decorator="/WEB-INF/views/reception/module/cms/layout/default.jsp"/>
+	<mapping path="/carousel.html" exclue="true"/>
+	
+</sitemesh>
