@@ -63,4 +63,6 @@ public class CommonController extends BaseController {
 		return ViewPrefixConstant.CMS_VIEW_PREFIX + "cms/common/footer";
 
 	}
+	
+
 }

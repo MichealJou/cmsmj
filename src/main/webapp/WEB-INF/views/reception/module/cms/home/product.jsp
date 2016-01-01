@@ -5,47 +5,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>产品展示</title>
+<title>${leftMenu[0].menuName}</title>
 
 </head>
 <body>
 
 	<div class="wrap mb">
 		<div id="pageLeft">
-			<div class="treeBox">
-				<h3>产品展示</h3>
-				<ul>
-				   <c:forEach var="productCategory" items="${productCategoryList }">
-				     <c:choose>
-				       <c:when test="${productCategory.productCategoryId  eq id}">
-				       <li class="cur"><a href="javascript:;">${productCategory.productCategoryName }</a></li>
-				       </c:when>
-				       <c:otherwise>
-				       <li ><a href="javascript:;">${productCategory.productCategoryName }</a></li>
-				       </c:otherwise>
-				     </c:choose>
-				   </c:forEach>
-					
-				</ul>
-			</div>
+			<jsp:include page="/WEB-INF/views/reception/module/cms/common/left_nav.jsp"/>
 		</div>
 		<div id="pageIn">
-			<div class="urHere">
-				当前位置：<a href="<%=basePath%>">首页</a><b>&gt;</b>公司简介
-			</div>
+			<jsp:include page="/WEB-INF/views/reception/module/cms/common/top_nav.jsp"/>
 			<div id="page">
-				<h1>公司简介</h1>
+				<h1>${leftMenu[0].menuName}</h1>
 				<div class="productList">
 				   <c:forEach var="productEntity" items="${productEntityList }">
 				      <dl>
 						<dt>
-							<a href="<%=basePath %>productInfo.html?id=${productEntity.productId}&cur=${cur}"><img
+							<a href="<%=basePath %>productInfo.html?id=${productEntity.productId}&ids=${ids}&parentId=${parentId}"><img
 								src="${productEntity.productPictureUrlPath}"
 								alt="${productEntity.productName }" width="135" height="135"></a>
 						</dt>
 						<dd>
 							<p class="name">
-								<a href="<%=basePath %>productInfo.html?id=${productEntity.productId}&cur=${cur}"
+								<a href="<%=basePath %>productInfo.html?id=${productEntity.productId}&ids=${ids}&parentId=${parentId}"
 									title="${productEntity.productName }">${productEntity.productName }</a>
 							</p>
 							<p class="brief">${productEntity.productDesc }</p>
@@ -68,8 +51,8 @@
 				  
 				   </c:if>
 				   <c:if test="${pageNo > 1 &&  pageNo < totalPage }">
-				     <a href="<%=basePath %>product.html?id=${id}&cur=${cur}&pageNo=1">第一页</a> 
-				     <a href="<%=basePath %>product.html?id=${id}&cur=${cur}&pageNo=${pageNo-1}">上一页</a>
+				     <a href="<%=basePath %>product.html?id=${id}&ids=${ids}&parentId=${parentId}&pageNo=1">第一页</a> 
+				     <a href="<%=basePath %>product.html?id=${id}&ids=${ids}&parentId=${parentId}&pageNo=${pageNo-1}">上一页</a>
 				   </c:if>
 				   <c:if test="${pageNo ==totalPage}">
 				     下一页
@@ -77,8 +60,8 @@
 				   </c:if>
 				   <c:if test="${pageNo>1 && pageNo < totalPage }">
 				     
-				      <a href="<%=basePath %>product.html?id=${id}&cur=${cur}&pageNo=${pageNo+1}">下一页</a>
-				      <a href="<%=basePath %>product.html?id=${id}&cur=${cur}&pageNo=${totalPage}">最末页</a>
+				      <a href="<%=basePath %>product.html?id=${id}&ids=${ids}&parentId=${parentId}&pageNo=${pageNo+1}">下一页</a>
+				      <a href="<%=basePath %>product.html?id=${id}&ids=${ids}&parentId=${parentId}&pageNo=${totalPage}">最末页</a>
 				   </c:if>
 				  
 				  

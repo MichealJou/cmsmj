@@ -26,25 +26,31 @@ public class ArticleController extends BaseController {
 	}
 
 	@RequestMapping(value = "article_list.html", method = RequestMethod.GET)
-	public String getArticleList(Model model, String artType,Integer pageNo) {
+	public String getArticleList(Model model, String artType,Integer pageNo , Integer parentId, Integer ids) {
 		if(pageNo == null){
 			pageNo = 1;
 		}
 		model.addAttribute("artType", artType);
 		model.addAttribute("articleEntityList", this.articleService.getArticleEntityList(artType, pageNo));
 		int totalCount = this.articleService.getArticleEntityCount(artType);
+		model.addAttribute("leftMenu", this.menuService.getLeftMenuNavigation(parentId));
+		model.addAttribute("topMenu", this.menuService.getTopMenuNavigation(ids, parentId));
 		model.addAttribute("totalCount", totalCount);
 		model.addAttribute("pageSize", pageSize);
 		model.addAttribute("totalPage", totalCount%pageSize == 0 ? totalCount/pageSize : totalCount/pageSize+1);
-	
+		model.addAttribute("parentId",parentId);
+		model.addAttribute("ids", ids);
 		model.addAttribute("pageNo", pageNo);
 		
 		return ViewPrefixConstant.CMS_VIEW_PREFIX + "cms/home/article";
 	}
 
 	@RequestMapping(value="article.html",method = RequestMethod.GET)
-	public String getArticleEntity(Model model, Integer id,String artType) {
-		
+	public String getArticleEntity(Model model, Integer id,String artType, Integer parentId, Integer ids) {
+		if(parentId != null && ids != null){
+			model.addAttribute("leftMenu", this.menuService.getLeftMenuNavigation(parentId));
+			model.addAttribute("topMenu", this.menuService.getTopMenuNavigation(ids,parentId));
+		}
 		model.addAttribute("articleEntity", articleService.getArticleEntity(id));
 		model.addAttribute("artType", artType);
 		return ViewPrefixConstant.CMS_VIEW_PREFIX + "cms/home/articleinfo";

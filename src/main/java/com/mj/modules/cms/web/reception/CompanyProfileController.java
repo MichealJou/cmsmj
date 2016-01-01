@@ -24,8 +24,10 @@ public class CompanyProfileController extends BaseController {
 	private CompanyProfileService companyProfileService;
 
 	@RequestMapping(value = "/company.html", method = RequestMethod.GET)
-	public String company(Model model) {
+	public String company(Model model, Integer parentId, Integer ids) {
 		model.addAttribute("data",companyProfileService.getCompanyProfileEntity());
+//		model.addAttribute("leftMenu", this.menuService.getLeftMenuNavigation(parentId));
+//		model.addAttribute("topMenu", this.menuService.getTopMenuNavigation(ids, parentId));
 		return ViewPrefixConstant.CMS_VIEW_PREFIX + "cms/home/company";
 	}
 }

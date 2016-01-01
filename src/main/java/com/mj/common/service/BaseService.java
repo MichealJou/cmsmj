@@ -32,32 +32,37 @@ public class BaseService {
 
 	}
 
-	protected String grenTemplate(List<MenuEntity> menuEntity, int i) {
+	protected String grenTemplate(List<MenuEntity> menuEntity, int i,int id) {
 
 		StringBuilder tem = new StringBuilder();
 		tem.append("<ul style='display:none;'>");
+		int j = 1;
 		for (MenuEntity menuEntity2 : menuEntity) {
-			tem.append("<li><a href='");
+			tem.append("<li><a data-clickstatus='");
+			tem.append(i);
+			tem.append("' data-menustatus='");
+			tem.append(j++);
+			tem.append("' href='");
 			tem.append(menuEntity2.getLink());
 			if (StringUtils.isNotBlank(menuEntity2.getLink())) {
 				if (menuEntity2.getLink().contains("?")) {
-					tem.append("&cur=");
-					tem.append(i);
+					tem.append("&parentId=");
+					tem.append(id);
+					tem.append("&ids=");
+					tem.append(menuEntity2.getId());
 				} else {
-					tem.append("?cur=");
-					tem.append(i);
+					tem.append("?parentId=");
+					tem.append(id);
+					tem.append("&ids=");
+					tem.append(menuEntity2.getId());
 				}
-			} else {
-
-				tem.append("?cur=");
-				tem.append(i);
-			}
+			} 
 
 			tem.append("'>");
 			tem.append(menuEntity2.getMenuName());
 			tem.append("</a>");
 			if (!menuEntity2.getMenuEntityList().isEmpty()) {
-				tem.append(grenTemplate(menuEntity2.getMenuEntityList(), i));
+				tem.append(grenTemplate(menuEntity2.getMenuEntityList(), i,id));
 			}
 			tem.append("</li>");
 		}

@@ -12,21 +12,10 @@
 
 	<div class="wrap mb">
 		<div id="pageLeft">
-			<div class="treeBox">
-				<h3>文章中心</h3>
-				<ul>
-
-					<li class="cur"><a href="javascript:;">公司动态</a></li>
-					<li><a href="javascript:;">行业新闻</a></li>
-
-
-				</ul>
-			</div>
+			<jsp:include page="/WEB-INF/views/reception/module/cms/common/left_nav.jsp"/>
 		</div>
 		<div id="pageIn">
-			<div class="urHere">
-				当前位置：<a href="<%=basePath%>">首页</a><b>&gt;</b>文章中心
-			</div>
+			<jsp:include page="/WEB-INF/views/reception/module/cms/common/top_nav.jsp"/>
 			<div id="articleList">
 				<c:forEach var="articleEntity" items="${articleEntityList }">
 					<dl>
@@ -35,7 +24,7 @@
 							<p>10-23</p> -->
 						</div>
 						<dt>
-							<a href="<%=basePath %>article.html?id=${articleEntity.artId}">${articleEntity.artTitle }</a>
+							<a href="<%=basePath %>article.html?id=${articleEntity.artId}&parentId=${parentId}&ids=${ids}">${articleEntity.artTitle }</a>
 						</dt>
 						<dd>
 							<p class="desc">${articleEntity.artContent }</p>
@@ -54,9 +43,9 @@
 				   </c:if>
 				<c:if test="${pageNo > 1 &&  pageNo < totalPage }">
 					<a
-						href="<%=basePath %>article_list.html?artType=${artType}&cur=${cur}&pageNo=1">第一页</a>
+						href="<%=basePath %>article_list.html?artType=${artType}&parentId=${parentId}&ids=${ids}&pageNo=1">第一页</a>
 					<a
-						href="<%=basePath %>article_list.html?artType=${artType}&cur=${cur}&pageNo=${pageNo-1}">上一页</a>
+						href="<%=basePath %>article_list.html?artType=${artType}&parentId=${parentId}&ids=${ids}&pageNo=${pageNo-1}">上一页</a>
 				</c:if>
 				<c:if test="${pageNo ==totalPage}">
 				     下一页
@@ -65,9 +54,9 @@
 				<c:if test="${pageNo>1 && pageNo < totalPage }">
 
 					<a
-						href="<%=basePath %>article_list.html?artType=${artType}&cur=${cur}&pageNo=${pageNo+1}">下一页</a>
+						href="<%=basePath %>article_list.html?artType=${artType}&parentId=${parentId}&ids=${ids}&pageNo=${pageNo+1}">下一页</a>
 					<a
-						href="<%=basePath %>article_list.html?artType=${artType}&cur=${cur}&pageNo=${totalPage}">最末页</a>
+						href="<%=basePath %>article_list.html?artType=${artType}&parentId=${parentId}&ids=${ids}&pageNo=${totalPage}">最末页</a>
 				</c:if>
 
 

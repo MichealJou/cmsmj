@@ -28,7 +28,7 @@ public class ArticleService extends BaseService {
 	}
 
 	public ArticleEntity getArticleEntity(Integer id) {
-		if (id == null) {
+		if (id != null) {
 			return this.articleDao.getArticleEntityId(id);
 		}
 		return null;

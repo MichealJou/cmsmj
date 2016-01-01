@@ -11,17 +11,10 @@
 
 	<div class="wrap mb">
 		<div id="pageLeft">
-			<div class="treeBox">
-				<h3>公司信息</h3>
-				<ul>
-					<li class="cur"><a href="javascript:;">联系我们</a></li>
-				</ul>
-			</div>
+			<jsp:include page="/WEB-INF/views/reception/module/cms/common/left_nav.jsp"/>
 		</div>
 		<div id="pageIn">
-			<div class="urHere">
-				当前位置：<a href="<%=basePath%>">首页</a><b>&gt;</b>联系我们
-			</div>
+			<jsp:include page="/WEB-INF/views/reception/module/cms/common/top_nav.jsp"/>
 			<div id="page">
 				<h1>联系我们</h1>
 				<div class="content">

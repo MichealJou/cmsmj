@@ -5,34 +5,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>产品展示</title>
+<title>文章展示</title>
 
 </head>
 <body>
 
 	<div class="wrap mb">
 		<div id="pageLeft">
-			<div class="treeBox">
-				<h3>产品展示</h3>
-				<ul>
-					<c:forEach var="productCategory" items="${productCategoryList }">
-						<c:choose>
-							<c:when test="${productCategory.productCategoryId  eq id}">
-								<li class="cur"><a href="javascript:;">${productCategory.productCategoryName }</a></li>
-							</c:when>
-							<c:otherwise>
-								<li><a href="javascript:;">${productCategory.productCategoryName }</a></li>
-							</c:otherwise>
-						</c:choose>
-					</c:forEach>
-
-				</ul>
-			</div>
+			<jsp:include page="/WEB-INF/views/reception/module/cms/common/left_nav.jsp"/>
 		</div>
 		<div id="pageIn">
-			<div class="urHere">
-				当前位置：<a href="<%=basePath%>">首页</a><b>&gt;</b>公司简介
-			</div>
+			<jsp:include page="/WEB-INF/views/reception/module/cms/common/top_nav.jsp"/>
 			<div id="article">
 				${articleEntity.artContent }
 			</div>

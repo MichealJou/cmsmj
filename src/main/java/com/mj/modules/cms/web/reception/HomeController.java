@@ -37,7 +37,7 @@ public class HomeController extends BaseController {
 
 		model.addAttribute("companyProfileEntity", companyProfileService.getCompanyProfileEntity());
 		// 获取产品信息
-		model.addAttribute(productService.getProductEntityList());
+		model.addAttribute("productEntityList",productService.getProductEntityList());
 		// 获取推荐
 		model.addAttribute("articleEntityList", articleService.getArticleEntityList());
 		// 获取联系人

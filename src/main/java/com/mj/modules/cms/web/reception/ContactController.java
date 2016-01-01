@@ -22,8 +22,11 @@ public class ContactController extends BaseController {
 	private ContactService contactService;
 	
 	@RequestMapping(value="contact.html",method=RequestMethod.GET)
-	public String contact(Model model){
+	public String contact(Model model, Integer parentId, Integer ids){
 		model.addAttribute("contactEntity", this.contactService.getContactEntity());
+		model.addAttribute("leftMenu", this.menuService.getLeftMenuNavigation(parentId));
+		model.addAttribute("topMenu", this.menuService.getTopMenuNavigation(ids, parentId));
+		
 		return ViewPrefixConstant.CMS_VIEW_PREFIX + "cms/home/contact";
 		
 	}
