@@ -12,12 +12,13 @@
 
 <div class="wrap mb">
    <div id="pageLeft">
-    <div class="treeBox">
- <h3>公司信息</h3>
- <ul>
-  <li class="cur"><a href="javascript:;">公司简介</a></li>
-   </ul>
-</div>   </div>
+			<div class="treeBox">
+				<h3>公司信息</h3>
+				<ul>
+					<li class="cur"><a href="<%=basePath %>company.html">公司简介</a></li>
+				</ul>
+			</div>
+		</div>
    <div id="pageIn">
      <div class="urHere">当前位置：<a href="<%=basePath %>">首页</a><b>&gt;</b>公司简介</div><div id="page">
        <h1>公司简介</h1>

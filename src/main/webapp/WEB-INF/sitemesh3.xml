@@ -6,6 +6,7 @@
 	<!-- 不用拦截的请求路径 -->
 	<mapping path="/admin/login.html" exclue="true" />
 	<mapping path="/index.html" exclue="true" />
+	<mapping path="/getArticleInfo.html" exclue="true" />
 	<mapping path="/**" decorator="/WEB-INF/views/reception/module/cms/layout/default.jsp"/>
 	<mapping path="/carousel.html" exclue="true"/>
 	

@@ -33,7 +33,7 @@
         <!-- 顶部开头 开始 -->
         <div class="mj_info_nav">
             <div class="mj_nav w-1000">
-                <span class="hot_phone">全国服务热线 : 40000-000-0000</span>
+                <span class="hot_phone">全国服务热线 : 13188993993</span>
                 <div class="mj_nav_rigth">
                     <a href="javascript:;" onclick="AddFavorite('<%=basePath %>','凯旋思拓信息技术有限公司');">设为首页</a> ｜
                     <a href="javascript:;">加入首页</a>
@@ -52,36 +52,7 @@
         <!-- 导航菜单 结束部分 -->
     </header>
     <!-- 轮播图片 开始 -->
-    <div class="mj_slider">
-        <div id="banner_tabs" class="flexslider">
-            <ul class="slides">
-                <li>
-                    <a title="" target="_blank" href="#">
-                        <img width="1" height="1" alt="" style="background: url(<%=basePath %>resources/reception/kingstuo/img/banner1.jpg) no-repeat center;" src="<%=basePath %>resources/reception/kingstuo/plugins/slider/images/alpha.png">
-                    </a>
-                </li>
-                <li>
-                    <a title="" href="#">
-                        <img width="1920" height="482" alt="" style="background: url(<%=basePath %>resources/reception/kingstuo/img/banner2.jpg) no-repeat center;" src="<%=basePath %>resources/reception/kingstuo/plugins/slider/images/alpha.png">
-                    </a>
-                </li>
-                <li>
-                    <a title="" href="#">
-                        <img width="1920" height="482" alt="" style="background: url(<%=basePath %>resources/reception/kingstuo/img/banner3.jpg) no-repeat center;" src="<%=basePath %>resources/reception/kingstuo/plugins/slider/images/alpha.png">
-                    </a>
-                </li>
-            </ul>
-            <ul class="flex-direction-nav">
-                <li><a class="flex-prev" href="javascript:;">Previous</a></li>
-                <li><a class="flex-next" href="javascript:;">Next</a></li>
-            </ul>
-            <ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
-                <li><a>1</a></li>
-                <li><a>2</a></li>
-                <li><a>2</a></li>
-            </ol>
-        </div>
-    </div>
+    <c:import url="/carousel_new.html"/>
     <!-- 轮播图片 结束 -->
     <!-- 中间的内容区域 开始 -->
     <div class="mj_content w-1000">
@@ -120,28 +91,18 @@
                     <span class="line"></span><span class="mj_st">STORE DISPLAY</span>
                     <span class="line"></span>
                 </div>
-                <p class="mj_article">&nbsp;&nbsp;&nbsp;凯旋思拓网络科技有限公司，是xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                </p>
+                <div class="mj_article"> 
+                &nbsp;&nbsp;&nbsp;
+                   ${companyProfileEntity.intrContent }
+               
+                </div>
                 <div class="mj_box_banner ">
                     <div class="slider center">
-                        <div>
-                            <a href="javascript:;"> <img src="<%=basePath %>resources/reception/kingstuo/img/banner_01.png" height="158" width="280"></a>
+                       <c:forEach var="productEntity" items="${productEntityList }" varStatus="index">
+                          <div>
+                            <a href="javascript:;" data-clickstatus="${status.index+1 }"> <img src="${productEntity.productPictureUrlPath }" height="158" width="280"></a>
                         </div>
-                        <div>
-                            <a href="javascript:;"><img src="<%=basePath %>resources/reception/kingstuo/img/banner_02.png" height="158" width="280"></a>
-                        </div>
-                        <div>
-                            <a href="javascript:;"><img src="<%=basePath %>resources/reception/kingstuo/img/banner_03.png" height="158" width="280"></a>
-                        </div>
-                        <div>
-                            <a href="javascript:;"><img src="<%=basePath %>resources/reception/kingstuo/img/banner_01.png" height="158" width="280"></a>
-                        </div>
-                        <div>
-                            <a href="javascript:;"> <img src="<%=basePath %>resources/reception/kingstuo/img/banner_02.png" height="158" width="280"></a>
-                        </div>
-                        <div>
-                            <a href="javascript:;"> <img src="<%=basePath %>resources/reception/kingstuo/img/banner_03.png" height="158" width="280"></a>
-                        </div>
+                       </c:forEach>
                     </div>
                 </div>
             </div>
@@ -167,24 +128,27 @@
             <!-- 网站信息 start -->
             <div class="mj_information_box  clear-both w-1000">
                 <div class="mj_information_tab">
-                    <span class="mj_tab active" id="information">最新资讯<i class="fa fa-caret-down mj_down mj_show"></i></span>
-                    <span class="mj_tab" id="notice">网站公告 <i class="fa fa-caret-down mj_down mj_hidden"></i></span>
+                    <!-- <span class="mj_tab active" id="information">最新资讯<i class="fa fa-caret-down mj_down mj_show"></i></span> -->
+                    <span class="mj_tab active" id="notice">网站公告 <i class="fa fa-caret-down mj_down mj_show"></i></span>
                 </div>
-                <ul class="mj_new_information mj_show" data-id="information">
+               <!--  <ul class="mj_new_information mj_show" data-id="information">
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告1<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
-                </ul>
-                <ul class="mj_new_information mj_hidden" data-id="notice">
-                    <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告2<b class="mj_data_time">2015/03/13</b></a></li>
+                </ul> -->
+                <ul class="mj_new_information" data-id="notice">
+                  <c:forEach var="articleEntity" items="${articleEntityNewsList}">
+                         <li><i class="fa fa-angle-right"></i><a href="<%=basePath %>getArticleInfo.html?id=${articleEntity.artId}" target="_blank">${articleEntity.artTitle}<b class="mj_data_time"><fmt:formatDate value="${articleEntity.artCreateTime }" pattern="yyyy/mm/dd"/></b></a></li>
+                  </c:forEach>
+                    <!-- <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告2<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
-                    <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
+                    <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li> -->
                 </ul>
                 <!-- 轮播 图片 start -->
                 <div class="mj_box_notice">
@@ -236,9 +200,9 @@
                     </div>
                     <ul class="mj_contact_map">
                         <li><i class="fa fa-phone fa-lg"></i><span class="mj_info">服务热线:&nbsp;${contactEntity.conTel}</span></li>
-                        <li><i class="fa fa-user fa-lg"></i><span class="mj_info">联&nbsp;系&nbsp;人:&nbsp;某先生</span></li>
+                        <li><i class="fa fa-user fa-lg"></i><span class="mj_info">联&nbsp;系&nbsp;人:&nbsp;闫先生</span></li>
                         <li><i class="fa fa-envelope  fa-lg"></i><span class="mj_info">公司邮箱:&nbsp;${contactEntity.conEmail }</span></li>
-                        <li><i class="fa fa-fax fa-lg"></i><span class="mj_info">公司传真:&nbsp;000-12345678</span></li>
+                        <!-- <li><i class="fa fa-fax fa-lg"></i><span class="mj_info">公司传真:&nbsp;000-12345678</span></li> -->
                         <li><i class="fa  fa-file-text-o fa-lg"></i><span class="mj_info">邮政编码:&nbsp;266200</span></li>
                         <li><i class="fa fa-map-pin fa-lg"></i><span class="mj_info">公司地址:&nbsp;${contactEntity.conAddress}</span></li>
                     </ul>

@@ -66,14 +66,7 @@
 		<property name="suffix" value="${web.view.suffix}" />
 	</bean>
 
-      <mvc:interceptors>
-         <mvc:interceptor>
-           <mvc:mapping path="admin/**"/>
-           <mvc:exclude-mapping path="admin/login.html"/>
-           <mvc:exclude-mapping path="admin/checkLogin.ajax"/>
-           <bean class="com.mj.common.interceptors.LoginInterceptor"/>
-         </mvc:interceptor>
-      </mvc:interceptors>
+    
 	<!-- 对静态资源文件的访问， 将无法mapping到Controller的path交给default servlet handler处理 -->
 	<mvc:default-servlet-handler />
 

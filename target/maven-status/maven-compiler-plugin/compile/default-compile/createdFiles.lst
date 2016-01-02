@@ -1,4 +1,5 @@
 com/mj/common/config/Global.class
+com/mj/modules/cms/service/PictureShowService.class
 com/mj/modules/cms/web/reception/ContentController.class
 com/mj/modules/cms/dao/ProductDao.class
 com/mj/common/service/BaseService.class
@@ -42,6 +43,7 @@ com/mj/modules/cms/service/ContactService.class
 com/mj/modules/cms/service/ProductService.class
 com/mj/common/web/BaseController.class
 com/mj/common/util/CacheUtils.class
+com/mj/modules/cms/dao/PictureShowDao.class
 com/mj/modules/cms/service/ArticleService.class
 com/mj/common/persistence/Parameter.class
 com/mj/common/web/BaseController$1.class

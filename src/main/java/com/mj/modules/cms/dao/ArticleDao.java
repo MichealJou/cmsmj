@@ -2,6 +2,8 @@ package com.mj.modules.cms.dao;
 
 import java.util.List;
 
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import com.mj.common.dao.BaseDao;
@@ -59,5 +61,21 @@ public class ArticleDao extends BaseDao<ArticleEntity> {
 		hql.append(" and artStatus = 0 order by artCreateTime desc");
 		return Integer.parseInt(String.valueOf(this.getSession().createQuery(hql.toString()).setParameter(0, type)
 				.setParameter(1, companyLimt).uniqueResult()));
+	}
+
+	/**
+	 * 获取最新公司动态
+	 * 
+	 * @param companyLimt
+	 * @param pageNo
+	 * @param pageSize
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public List<ArticleEntity> getArtcleEntityList(String companyLimt, Integer pageNo, Integer pageSize) {
+		return this.getSession().createCriteria(ArticleEntity.class).add(Restrictions.eq("comId", companyLimt))
+				.addOrder(Order.desc("artCreateTime")).setFirstResult((pageNo - 1) * pageSize).setMaxResults(pageSize)
+				.list();
+
 	}
 }

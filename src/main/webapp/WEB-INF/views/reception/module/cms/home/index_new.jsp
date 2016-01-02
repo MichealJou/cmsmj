@@ -128,24 +128,27 @@
             <!-- 网站信息 start -->
             <div class="mj_information_box  clear-both w-1000">
                 <div class="mj_information_tab">
-                    <span class="mj_tab active" id="information">最新资讯<i class="fa fa-caret-down mj_down mj_show"></i></span>
-                    <span class="mj_tab" id="notice">网站公告 <i class="fa fa-caret-down mj_down mj_hidden"></i></span>
+                    <!-- <span class="mj_tab active" id="information">最新资讯<i class="fa fa-caret-down mj_down mj_show"></i></span> -->
+                    <span class="mj_tab active" id="notice">网站公告 <i class="fa fa-caret-down mj_down mj_show"></i></span>
                 </div>
-                <ul class="mj_new_information mj_show" data-id="information">
+               <!--  <ul class="mj_new_information mj_show" data-id="information">
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告1<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
-                </ul>
-                <ul class="mj_new_information mj_hidden" data-id="notice">
-                    <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告2<b class="mj_data_time">2015/03/13</b></a></li>
+                </ul> -->
+                <ul class="mj_new_information" data-id="notice">
+                  <c:forEach var="articleEntity" items="${articleEntityNewsList}">
+                         <li><i class="fa fa-angle-right"></i><a href="<%=basePath %>getArticleInfo.html?id=${articleEntity.artId}" target="_blank">${articleEntity.artTitle}<b class="mj_data_time"><fmt:formatDate value="${articleEntity.artCreateTime }" pattern="yyyy/mm/dd"/></b></a></li>
+                  </c:forEach>
+                    <!-- <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告2<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
                     <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
-                    <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li>
+                    <li><i class="fa fa-angle-right"></i><a href="#">凯旋思拓网络科技有限公司公告<b class="mj_data_time">2015/03/13</b></a></li> -->
                 </ul>
                 <!-- 轮播 图片 start -->
                 <div class="mj_box_notice">

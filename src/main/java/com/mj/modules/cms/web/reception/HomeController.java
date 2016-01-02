@@ -37,11 +37,14 @@ public class HomeController extends BaseController {
 
 		model.addAttribute("companyProfileEntity", companyProfileService.getCompanyProfileEntity());
 		// 获取产品信息
-		model.addAttribute("productEntityList",productService.getProductEntityList());
+		model.addAttribute("productEntityList", productService.getProductEntityList());
 		// 获取推荐
 		model.addAttribute("articleEntityList", articleService.getArticleEntityList());
 		// 获取联系人
 		model.addAttribute("contactEntity", contactService.getContactEntity());
+		// 获取推荐消息
+		model.addAttribute("articleEntityNewsList", articleService.getArtcleEntityList());
+		
 		return ViewPrefixConstant.CMS_VIEW_PREFIX + "cms/home/index_new";
 
 	}

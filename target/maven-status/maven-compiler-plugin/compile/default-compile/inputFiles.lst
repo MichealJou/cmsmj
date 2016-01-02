@@ -18,6 +18,7 @@
 /work/eclipsework/cmsmj/src/main/java/com/mj/common/util/DateUtils.java
 /work/eclipsework/cmsmj/src/main/java/com/mj/modules/cms/web/reception/ArticleController.java
 /work/eclipsework/cmsmj/src/main/java/com/mj/common/service/BaseService.java
+/work/eclipsework/cmsmj/src/main/java/com/mj/modules/cms/dao/PictureShowDao.java
 /work/eclipsework/cmsmj/src/main/java/com/mj/common/dao/BaseDao.java
 /work/eclipsework/cmsmj/src/main/java/com/mj/modules/cms/web/reception/ContentController.java
 /work/eclipsework/cmsmj/src/main/java/com/mj/modules/cms/service/ArticleService.java
@@ -26,6 +27,7 @@
 /work/eclipsework/cmsmj/src/main/java/com/mj/modules/cms/dao/ProductDao.java
 /work/eclipsework/cmsmj/src/main/java/com/mj/modules/cms/service/MenuService.java
 /work/eclipsework/cmsmj/src/main/java/com/mj/common/util/CacheUtils.java
+/work/eclipsework/cmsmj/src/main/java/com/mj/modules/cms/service/PictureShowService.java
 /work/eclipsework/cmsmj/src/main/java/com/mj/common/config/Global.java
 /work/eclipsework/cmsmj/src/main/java/com/mj/common/persistence/Page.java
 /work/eclipsework/cmsmj/src/main/java/com/mj/common/util/PropertiesLoader.java

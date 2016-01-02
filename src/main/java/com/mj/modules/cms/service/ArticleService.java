@@ -36,7 +36,8 @@ public class ArticleService extends BaseService {
 
 	public ArticleEntity getArticleEntity() {
 
-		List<ArticleEntity> articleEntityList = this.articleDao.getArticleEntity(Constant.ARTTYPE_RECRUITMENT,companyLimt);
+		List<ArticleEntity> articleEntityList = this.articleDao.getArticleEntity(Constant.ARTTYPE_RECRUITMENT,
+				companyLimt);
 		if (articleEntityList != null && !articleEntityList.isEmpty()) {
 			return articleEntityList.get(0);
 		}
@@ -44,13 +45,24 @@ public class ArticleService extends BaseService {
 
 	}
 
-	public List<ArticleEntity> getArticleEntityList(String artType,Integer pageNo) {
-		return this.articleDao.getArticleEntityList(artType,companyLimt,pageNo,pageSize);
+	public List<ArticleEntity> getArticleEntityList(String artType, Integer pageNo) {
+		return this.articleDao.getArticleEntityList(artType, companyLimt, pageNo, pageSize);
 
 	}
-	
-	public Integer getArticleEntityCount(String artType){
+
+	public Integer getArticleEntityCount(String artType) {
 		return this.articleDao.getArticleEntityCount(artType, companyLimt);
-		
+
+	}
+
+	/**
+	 * 获取推荐消息
+	 * 
+	 * @return
+	 */
+	public List<ArticleEntity> getArtcleEntityList() {
+
+		return this.articleDao.getArtcleEntityList(companyLimt, 1, 6);
+
 	}
 }
