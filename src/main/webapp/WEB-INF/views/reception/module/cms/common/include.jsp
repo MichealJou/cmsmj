@@ -1,9 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <meta name="baidu-site-verification" content="TEOqjr924J" />
 <%@include file="/WEB-INF/views/reception/module/cms/common/include_tag.jsp" %>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="renderer" content="webkit">
-<meta http-equiv="Cache-Control" content="no-siteapp" />    
+<meta http-equiv="Cache-Control" content="no-siteapp" />  
+<meta name="360-site-verification" content="af5a43fade1cc748de31f4eb84733d1b" />
+<meta name="baidu-site-verification" content="TEOqjr924J" /> 
+<meta name="keywords" content="凯旋,思拓,网络,青岛凯旋思拓网络科技有限公司,网站建设,电商运营,软件开发,软件销售,服务器销售">
+<meta name="description" content="青岛凯旋思拓网络科技有限公司是由“凯旋工作室”2012年5月成立改名而来，是一家互联网科技企业，公司致力于提供专业互联网信息服务，从事网站建设、电商运营（天猫淘宝）、软件开发、软件销售、VI设计、服务器销售等项目为一体的解决方案服务商。公司主营业务软件开发设计，客户群囊括企业、学校、政府部门、商铺等。公司目前经营的开发项目有：管理系统、企业网站、综合门户网站、OA系统、进销存系统等。">
 <link rel="stylesheet" href="<%=basePath %>resources/reception/cms/css/base.css"/>
 <link rel="stylesheet" href="<%=basePath %>resources/reception/cms/css/index.css"/>
 <link rel="stylesheet" href="<%=basePath %>resources/reception/cms/css/style.css"/>

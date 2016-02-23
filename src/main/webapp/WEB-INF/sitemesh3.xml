@@ -9,5 +9,6 @@
 	<mapping path="/getArticleInfo.html" exclue="true" />
 	<mapping path="/**" decorator="/WEB-INF/views/reception/module/cms/layout/default.jsp"/>
 	<mapping path="/carousel.html" exclue="true"/>
+	<mapping path="/baidu_verify_aID4xdUvi9.html" exclue="true "/>
 	
 </sitemesh>

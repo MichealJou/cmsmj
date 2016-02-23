@@ -1,8 +1,6 @@
 package com.mj.modules.cms.dao;
 
 import org.hibernate.Session;
-import org.hibernate.transform.ResultTransformer;
-import org.hibernate.transform.RootEntityResultTransformer;
 import org.springframework.stereotype.Repository;
 
 import com.mj.common.dao.BaseDao;

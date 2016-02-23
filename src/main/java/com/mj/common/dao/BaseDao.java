@@ -24,6 +24,7 @@ import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.CriteriaSpecification;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
@@ -516,7 +517,7 @@ public class BaseDao<T> {
 	 * @return
 	 */
 	public Page<T> find(Page<T> page, DetachedCriteria detachedCriteria) {
-		return find(page, detachedCriteria, Criteria.DISTINCT_ROOT_ENTITY);
+		return find(page, detachedCriteria, CriteriaSpecification.DISTINCT_ROOT_ENTITY);
 	}
 	
 	/**
@@ -567,7 +568,7 @@ public class BaseDao<T> {
 	 * @return
 	 */
 	public List<T> find(DetachedCriteria detachedCriteria) {
-		return find(detachedCriteria, Criteria.DISTINCT_ROOT_ENTITY);
+		return find(detachedCriteria, CriteriaSpecification.DISTINCT_ROOT_ENTITY);
 	}
 	
 	/**

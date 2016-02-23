@@ -8,13 +8,11 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 
 import com.mj.common.config.Global;
 import com.mj.common.util.DateUtils;
-import com.mj.modules.cms.entity.MenuEntity;
 import com.mj.modules.cms.service.MenuService;
 /**
  * 基础的controller
