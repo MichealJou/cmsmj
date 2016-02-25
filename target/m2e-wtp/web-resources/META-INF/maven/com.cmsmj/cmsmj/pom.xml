@@ -21,7 +21,6 @@
 		<guava.version>17.0</guava.version>
 		<dozer.version>5.5.1</dozer.version>
 		<hibernate.version>4.3.11.Final</hibernate.version>
-		<hibernate-search.version>5.3.0.Final</hibernate-search.version>
 		<poi.version>3.9</poi.version>
 		<jdk.version>1.7</jdk.version>
 		<ehcache.version>2.6.9</ehcache.version>
@@ -32,37 +31,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<downloadSources>true</downloadSources>
 	</properties>
-	<repositories>
-		<repository>
-			<id>oschina-repos</id>
-			<name>Oschina Releases</name>
-			<url>http://maven.oschina.net/content/groups/public</url>
-		</repository>
-
-		<repository>
-			<id>java-repos</id>
-			<name>Java Repository</name>
-			<url>http://download.java.net/maven/2/</url>
-		</repository>
-
-		<repository>
-			<id>springsource-repos</id>
-			<name>SpringSource Repository</name>
-			<url>http://repo.spring.io/release/</url>
-		</repository>
-
-		<repository>
-			<id>central-repos</id>
-			<name>Central Repository</name>
-			<url>http://repo.maven.apache.org/maven2</url>
-		</repository>
-
-		<repository>
-			<id>central-repos2</id>
-			<name>Central Repository 2</name>
-			<url>http://repo1.maven.org/maven2/</url>
-		</repository>
-	</repositories>
 	<!-- 加载依赖jar包 -->
 	<dependencies>
 		<!-- spring mvc 框架 -->
@@ -118,11 +86,6 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-search-orm</artifactId>
-			<version>5.3.0.Final</version>
 		</dependency>
 		<!-- bean validate -->
 		<dependency>
@@ -211,35 +174,10 @@
 			<version>${guava.version}</version>
 		</dependency>
 		<!-- PERSISTENCE begin -->
-		<!-- Hibernate -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
-		<!-- jpa <dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-entitymanager</artifactId> 
-			<version>${hibernate.version}</version> </dependency> -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-ehcache</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-search</artifactId>
-			<version>${hibernate-search.version}</version>
-		</dependency>
-		<!-- freemarker engine -->
-		<dependency>
-			<groupId>org.freemarker</groupId>
-			<artifactId>freemarker</artifactId>
-			<version>${freemarker.version}</version>
 		</dependency>
 		<!-- xstream xml -->
 		<dependency>
@@ -258,8 +196,6 @@
 			<artifactId>activation</artifactId>
 			<version>1.1.1</version>
 		</dependency>
-
-		<!-- poi office -->
 		<!-- poi office -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -330,12 +266,6 @@
 			<artifactId>jackson-module-jaxb-annotations</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
-		<!-- google java library -->
-		<!-- image util -->
-		<!-- <dependency> <groupId>com.drewnoakes</groupId> <artifactId>metadata-extractor</artifactId> 
-			<version>2.8.1</version> </dependency> -->
-
-
 		<!-- 条形码、二维码生成 -->
 		<dependency>
 			<groupId>com.google.zxing</groupId>
@@ -347,31 +277,7 @@
 			<artifactId>javase</artifactId>
 			<version>2.2</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-analyzers-common</artifactId>
-			<version>5.2.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-core</artifactId>
-			<version>5.2.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-highlighter</artifactId>
-			<version>5.2.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-queryparser</artifactId>
-			<version>5.2.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-analyzers</artifactId>
-			<version>3.6.2</version>
-		</dependency>
+
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
@@ -387,12 +293,15 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.36</version>
 		</dependency>
-		<!-- <dependency> <groupId>opensymphony</groupId> <artifactId>sitemesh</artifactId> 
-			<version>2.4.2</version> </dependency> -->
 		<dependency>
-			<groupId>org.sitemesh</groupId>
-			<artifactId>sitemesh</artifactId>
-			<version>3.0.1</version>
+			<groupId>com.ibeetl</groupId>
+			<artifactId>beetl</artifactId>
+			<version>2.2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ibeetl</groupId>
+			<artifactId>btjson</artifactId>
+			<version>0.94</version>
 		</dependency>
 		<!-- GENERAL UTILS end -->
 	</dependencies>
@@ -400,18 +309,16 @@
 		<!-- <sourceDirectory>src</sourceDirectory> -->
 		<pluginManagement>
 			<plugins>
-				<plugin>
-					<groupId>org.apache.tomcat.maven</groupId>
-					<artifactId>tomcat6-maven-plugin</artifactId>
-					<version>2.2</version>
-				</plugin>
+
 				<plugin>
 					<groupId>org.apache.tomcat.maven</groupId>
 					<artifactId>tomcat7-maven-plugin</artifactId>
 					<version>2.2</version>
 					<configuration>
 						<port>8080</port>
-						<path>/<!-- ${project.artifactId} --></path>
+						<path>
+							/<!-- ${project.artifactId} -->
+						</path>
 						<uriEncoding>${project.build.sourceEncoding}</uriEncoding>
 					</configuration>
 				</plugin>
