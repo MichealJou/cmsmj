@@ -3,11 +3,16 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
-	<display-name>mj</display-name>
+
+
+	<!-- Spring Web ApplicationContext配置 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath*:/spring-context.xml</param-value>
+		<param-value>
+		    classpath*:/spring-context.xml
+		</param-value>
 	</context-param>
+	<!-- log4j 配置 -->
 	<context-param>
 		<param-name>log4jConfigLocation</param-name>
 		<param-value>classpath:log4j.properties</param-value>
@@ -19,48 +24,58 @@
 	<listener>
 		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
 	</listener>
+	<!-- log4j 配置 -->
 	<listener>
-		<description>spring监听器</description>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+
+	<!-- 编码过滤器 -->
 	<filter>
-		<filter-name>encodingFilter</filter-name>
+		<filter-name>Character Encoding Filter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
 		<init-param>
+			<description>指定字符编码编码</description>
 			<param-name>encoding</param-name>
 			<param-value>UTF-8</param-value>
 		</init-param>
 		<init-param>
+			<description>是否强制要求响应包编码与请求包相同，false表示如果响应包设置了自己编码则不强制修改</description>
 			<param-name>forceEncoding</param-name>
-			<param-value>true</param-value>
+			<param-value>false</param-value>
 		</init-param>
 	</filter>
 	<filter-mapping>
-		<filter-name>encodingFilter</filter-name>
-		<url-pattern>/*</url-pattern>
+		<filter-name>Character Encoding Filter</filter-name>
+		<servlet-name>Dispatcher Servlet</servlet-name>
 	</filter-mapping>
+
+	<!-- 请求日志过滤器，调试用 -->
+	<filter>
+		<filter-name>Commons Request Logging Filter</filter-name>
+		<filter-class>org.springframework.web.filter.CommonsRequestLoggingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Commons Request Logging Filter</filter-name>
+		<servlet-name>Dispatcher Servlet</servlet-name>
+	</filter-mapping>
+
+	<!-- Spring MVC前端处理器 -->
 	<servlet>
-		<servlet-name>springServlet</servlet-name>
+		<servlet-name>Dispatcher Servlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
+			<description>Spring MVC定义Bean文件，该文件为空配置，所有配置交给上级WebApplicationContext来处理</description>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>classpath*:/spring-mvc.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>springServlet</servlet-name>
+		<servlet-name>Dispatcher Servlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	<!-- 随机验证码 -->
-	<servlet>
-		<servlet-name>ValidateCodeServlet</servlet-name>
-		<servlet-class>com.mj.common.servlet.ValidateCodeServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ValidateCodeServlet</servlet-name>
-		<url-pattern>/servlet/validateCode.png</url-pattern>
-	</servlet-mapping>
 
-	
+
+
+
 </web-app>
