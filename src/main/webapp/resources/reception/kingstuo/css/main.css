@@ -717,7 +717,8 @@ footer {
     position: relative;
     width: 100%;
     height: 129px;
-    margin-top: 150px;
+  /*   margin-top: 150px; */
+  margin-top:-20px;
 }
 
 .mj_info_footer a {

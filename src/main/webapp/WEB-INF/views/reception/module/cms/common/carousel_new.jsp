@@ -8,7 +8,7 @@
                <c:forEach var="pictureShowEntity" items="${pictureShowEntityList }" varStatus="index">
                 <li>
                     <a title="" target="_blank" href="javascript:;" style="cursor: default;">
-                        <img width="1920" height="482" alt="" style="background: url('${pictureShowEntity.pictureUrlPath }') no-repeat center;" src="${pictureShowEntity.pictureUrlPath }">
+                        <img   alt="" style="background: url('${pictureShowEntity.pictureUrlPath }') no-repeat center;" src="${pictureShowEntity.pictureUrlPath }">
                     </a>
                 </li>
                </c:forEach>

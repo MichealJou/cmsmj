@@ -133,7 +133,7 @@
 	</div>
 	<!-- 关于我们 end -->
 	<!-- 新闻资讯 start-->
-	<div class="mj_box_information">
+	<%-- <div class="mj_box_information">
 		<div class="mj_information_box w-1000">
 			<div class="mj_line line_1"></div>
 			<img
@@ -218,10 +218,10 @@
 				<!-- 轮播 图片 end -->
 			</div>
 			<!-- 网站信息 end -->
-		</div>
+		</div> --%>
 		<!-- 新闻资讯 box content end -->
 		<!--联系我们 start-->
-		<div class="mj_contact clear-both">
+		<%-- <div class="mj_contact clear-both">
 			<div class="mj_contact_box w-1000">
 				<div class="mj_line line_3"></div>
 				<img
@@ -284,7 +284,7 @@
 				</div>
 			</div>
 			<!-- 联系 内容部分 end-->
-		</div>
+		</div> --%>
 		<!--联系我们 end-->
 		<footer>
 			<div class="footer_1">
