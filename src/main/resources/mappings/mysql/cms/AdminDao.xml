@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mj.modules.cms.dao.AdminDao">
+    <resultMap type="adminEntity" id="adminEntityMap">
+       <id column="id" property="id"/>
+       <result column="username" property="username"/>
+    </resultMap>
+    <select id="getAdminEntityList" resultMap="adminEntityMap">
+       select * from t_admin
+    </select>
+</mapper>
